@@ -21,11 +21,11 @@ class Client {
 
     Client(String host, int port) {
         client = new TcpClientSpec<String, String>(NettyTcpClient).
-            env(new Environment()).
-            dispatcher(new SynchronousDispatcher()).
-            codec(codec).
-            connect(host, port).
-            get()
+                env(new Environment()).
+                dispatcher(new SynchronousDispatcher()).
+                codec(codec).
+                connect(host, port).
+                get()
 
         def connection = client.open().await(5, TimeUnit.SECONDS)
         ["one", "two", "three", "four", "five"].each { String item ->
@@ -33,4 +33,5 @@ class Client {
         }
         client.close().await(5, TimeUnit.SECONDS)
 
+    }
 }
