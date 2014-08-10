@@ -1,0 +1,22 @@
+apply plugin: 'idea'
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    reactorVersion = '1.1.2.RELEASE'
+}
+
+dependencies {
+
+    compile "org.projectreactor:reactor-net:$reactorVersion"
+    compile "org.projectreactor:reactor-core:$reactorVersion"
+    compile "org.projectreactor:reactor-groovy:$reactorVersion"
+    compile "org.projectreactor:reactor-groovy-extensions:$reactorVersion"
+    compile "org.projectreactor.spring:reactor-spring-context:$reactorVersion"
+
+    compile "com.google.guava:guava:17.0"
+
+}
