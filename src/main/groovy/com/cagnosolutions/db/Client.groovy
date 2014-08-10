@@ -16,6 +16,8 @@ import java.util.concurrent.TimeUnit
 
 class Client {
 
+    // awesome
+
     TcpClient client
     def codec = new ProtobufCodec()
 
