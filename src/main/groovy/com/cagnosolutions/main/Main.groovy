@@ -1,5 +1,7 @@
 package com.cagnosolutions.main
 
+import com.cagnosolutions.db.Client
+import com.cagnosolutions.db.Server
 import groovy.transform.CompileStatic
 /**
  * Created by Scott Cagno.
@@ -8,6 +10,14 @@ import groovy.transform.CompileStatic
 
 @CompileStatic
 class Main {
+
+    static void main(String... args) {
+        new Server(9000)
+        new Client("localhost", 9000)
+    }
+
+
+
 
     /*
     static void main(String... args) {

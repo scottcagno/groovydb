@@ -1,5 +1,6 @@
 package com.cagnosolutions.db
 
+import groovy.transform.CompileStatic
 import reactor.core.Environment
 import reactor.event.dispatch.SynchronousDispatcher
 import reactor.io.encoding.protobuf.ProtobufCodec
@@ -14,9 +15,8 @@ import java.util.concurrent.TimeUnit
  * Copyright Cagno Solutions. All rights reserved.
  */
 
+@CompileStatic
 class Client {
-
-    // jfkldjlsad
 
     TcpClient client
     def codec = new ProtobufCodec()

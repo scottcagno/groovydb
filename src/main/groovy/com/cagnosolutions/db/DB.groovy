@@ -1,4 +1,6 @@
 package com.cagnosolutions.db
+
+import groovy.transform.CompileStatic
 import reactor.core.Environment
 import reactor.event.dispatch.SynchronousDispatcher
 import reactor.function.Consumer
@@ -16,6 +18,7 @@ import java.util.concurrent.TimeUnit
  * Copyright Cagno Solutions. All rights reserved.
  */
 
+@CompileStatic
 class DB {
 
     Environment sEnv

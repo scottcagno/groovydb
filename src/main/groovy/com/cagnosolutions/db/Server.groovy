@@ -1,5 +1,6 @@
 package com.cagnosolutions.db
 
+import groovy.transform.CompileStatic
 import reactor.core.Environment
 import reactor.event.dispatch.SynchronousDispatcher
 import reactor.function.Consumer
@@ -14,6 +15,7 @@ import reactor.net.tcp.spec.TcpServerSpec
  * Copyright Cagno Solutions. All rights reserved.
  */
 
+@CompileStatic
 class Server {
 
     TcpServer server
@@ -27,16 +29,14 @@ class Server {
             codec(codec).
             consume({ conn ->
                 conn.consume({ data ->
-                    consumerMock.any(data)
+                    while(data != null)
+                        println data
+                        if(data == "five")
+                            server.close()
                 } as Consumer<String>)
             } as Consumer<NetChannel<String, String>>).
             get()
 
-
-    }
-
-    def consumerMock = Mock(Consumer) {
-        data.size() * accept(_)
     }
 
 }
